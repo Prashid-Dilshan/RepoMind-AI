@@ -1,0 +1,21 @@
+# Render Blueprint: New + > Blueprint, pick this repository.
+# A persistent disk needs a paid instance type; without it, indexes vanish on every deploy.
+services:
+  - type: web
+    name: repomind-ai
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    disk:
+      name: repomind-data
+      mountPath: /data
+      sizeGB: 5
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ACCESS_KEY
+        sync: false
+      - key: APP_ENV
+        value: production
+      - key: DATA_DIR
+        value: /data

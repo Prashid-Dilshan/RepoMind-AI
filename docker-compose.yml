@@ -1,0 +1,15 @@
+services:
+  repomind:
+    build: .
+    image: repomind-ai
+    ports:
+      - "8000:8000"
+    env_file: .env
+    environment:
+      APP_ENV: production
+    volumes:
+      - repomind-data:/data
+    restart: unless-stopped
+
+volumes:
+  repomind-data:

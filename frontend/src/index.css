@@ -1,0 +1,122 @@
+:root {
+  /* Sidebar: deep spruce with an amber signal color (the same in light and dark) */
+  --spruce-900: #0d2825;
+  --spruce-800: #123530;
+  --spruce-700: #1b4740;
+  --spruce-line: rgba(228, 239, 235, 0.14);
+  --on-spruce: #e4efeb;
+  --on-spruce-muted: #9db8b0;
+  --amber: #f2b531;
+  --amber-ink: #2a1d00;
+
+  /* Workspace */
+  --paper: #eef1f4;
+  --surface: #ffffff;
+  --ink: #16222b;
+  --ink-muted: #5a6a75;
+  --line: #d5dce2;
+  --mint: #ddebe6;
+  --danger: #b83a27;
+  --danger-bg: #fbeae6;
+  --err-border: #e7b7ad;
+  --err-ink: #7d2516;
+  --bubble: #123530;
+  --code-bg: #eaf0ee;
+  --link: #1b4740;
+  --source-ink: #17423b;
+  --pill-ready-bg: #ddebe6;
+  --pill-ready-ink: #165c45;
+  --pill-busy-bg: #fff1cc;
+  --pill-busy-ink: #6b4a00;
+  --pill-failed-bg: #fbeae6;
+  --pill-failed-ink: #b83a27;
+
+  --focus: #1b4740;
+  --ghost-line: var(--line);
+  --ghost-ink: var(--ink);
+
+  --font-display: 'Bricolage Grotesque', 'IBM Plex Sans', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --paper: #0d1819;
+  --surface: #142224;
+  --ink: #e5eeeb;
+  --ink-muted: #93a9a4;
+  --line: #24393b;
+  --mint: #183733;
+  --danger: #ff9b86;
+  --danger-bg: #3a1b16;
+  --err-border: #6b2d22;
+  --err-ink: #ffc7bb;
+  --bubble: #1b4740;
+  --code-bg: #1d3234;
+  --link: #7fd1bd;
+  --source-ink: #bfe6da;
+  --pill-ready-bg: #183733;
+  --pill-ready-ink: #8fdcc3;
+  --pill-busy-bg: #3d3210;
+  --pill-busy-ink: #f2d27a;
+  --pill-failed-bg: #3a1b16;
+  --pill-failed-ink: #ff9b86;
+  --focus: #f2b531;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--amber);
+  color: var(--amber-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
